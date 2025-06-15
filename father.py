@@ -2,7 +2,10 @@ import streamlit as st
 import google.generativeai as genai
 
 # 🔐 Set your API Key
-genai.configure(api_key="AIzaSyC9jEg8Icw6kMPs0tdncQKUCGtdeI_xINo")  # Replace with your actual key
+api_key=st.secrets["bilal_api"]
+
+# Configure Gemini API key
+genai.configure(api_key=api_key)  # Replace with your actual key
 
 # Initialize Gemini model
 model = genai.GenerativeModel("gemini-1.5-flash")
